@@ -32,7 +32,8 @@ export async function getStaticPaths() {
 
   client.close();
   return {
-    fallback: false, //means paths contain all supporting meetupIds and if true impiles not all ids are there in paths
+    // fallback: false, //means paths contain all supporting meetupIds and if true impiles not all ids are there in paths
+    falllback:'blocking',
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
